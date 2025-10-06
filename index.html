@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CerradoTech — Automatização Inteligente com IA</title>
+  <meta name="description" content="Conecte seu atendimento com inteligência.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root { color-scheme: dark; }
+    html { scroll-behavior: smooth; }
+    html, body { background:#0b1020; }
+    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; }
+    .glass { backdrop-filter: blur(10px); background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12); }
+    .btn { border-radius: 9999px; padding: .9rem 1.1rem; font-weight: 800; }
+    .btn-primary { background: linear-gradient(90deg,#22c55e,#16a34a); color:#0a0f1f; }
+    .btn-outline { border:2px solid rgba(255,255,255,.6); }
+    .badge { background:linear-gradient(90deg, rgba(59,130,246,.2), rgba(147,51,234,.2)); border:1px solid rgba(191,219,254,.3); }
+    .hero-bg { background:
+      radial-gradient(1200px 800px at -10% 10%, rgba(59,130,246,.18), transparent),
+      radial-gradient(1200px 800px at 110% 80%, rgba(168,85,247,.16), transparent);
+    }
+    .plan { transition: transform .2s ease, box-shadow .2s ease; }
+    .plan:hover { transform: translateY(-2px); }
+    .tick::before { content:"✓"; margin-right:.5rem; }
+    a.btn, button.btn { text-decoration: none; display: inline-block; }
+  </style>
+</head>
+<body class="text-white antialiased">
+  <header class="hero-bg border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="#topo" class="flex items-center gap-3 group" id="topo">
+        <!-- Logo em código SVG -->
+        <svg width="36" height="36" viewBox="0 0 64 64" class="drop-shadow-md">
+          <defs>
+            <linearGradient id="ctg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#34d399"/>
+              <stop offset="1" stop-color="#16a34a"/>
+            </linearGradient>
+            <linearGradient id="ctring" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#0ea5e9"/>
+              <stop offset="1" stop-color="#8b5cf6"/>
+            </linearGradient>
+            <clipPath id="ctr">
+              <rect x="0" y="0" width="64" height="64" rx="14"></rect>
+            </clipPath>
+          </defs>
+          <g clip-path="url(#ctr)">
+            <rect width="64" height="64" rx="14" fill="url(#ctg)"/>
+            <path d="M18 34c0-8 6-14 14-14s14 6 14 14-6 14-14 14" fill="none" stroke="#0b1020" stroke-width="6" stroke-linecap="round"/>
+            <path d="M18 34h14v14" fill="none" stroke="#0b1020" stroke-width="6" stroke-linecap="round"/>
+            <circle cx="50" cy="14" r="10" fill="none" stroke="url(#ctring)" stroke-width="4" opacity=".9"/>
+          </g>
+        </svg>
+        <strong class="text-lg tracking-tight">CerradoTech</strong>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-white/80">
+        <a href="#como" class="hover:text-white">Como funciona</a>
+        <a href="#planos" class="hover:text-white">Planos</a>
+        <a href="#recursos" class="hover:text-white">Recursos</a>
+        <a href="#faq" class="hover:text-white">Perguntas</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <a class="btn btn-outline hover:bg-white hover:text-slate-900 transition" href="#demo">Testar Agora</a>
+        <a class="btn btn-primary hover:brightness-110 transition" href="#contato">Agende Demonstração</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero-bg">
+      <div class="max-w-7xl mx-auto px-4 py-16 grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="inline-flex items-center gap-2 badge text-blue-100 rounded-full px-4 py-2 mb-6">
+            <i data-lucide="sparkles" class="w-4 h-4 text-yellow-300"></i>
+            <span class="text-sm">Automatização Inteligente com IA</span>
+          </div>
+          <h1 class="text-5xl md:text-6xl font-extrabold leading-tight">Conecte seu atendimento com inteligência</h1>
+          <p class="text-blue-100/90 text-lg mt-4 max-w-2xl">Automatize interações, integre dados e reduza custos com assistentes personalizados para seu negócio</p>
+          <div class="flex flex-col sm:flex-row gap-3 mt-8">
+            <a href="#demo" class="btn btn-primary" id="cta-testar">Testar Agora - Grátis</a>
+            <a href="#contato" class="btn btn-outline" id="cta-agendar">Agende Demonstração</a>
+          </div>
+          <div class="flex flex-wrap gap-4 mt-8 text-blue-100">
+            <div class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400"></i><span>Implementação em 2 dias</span></div>
+            <div class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400"></i><span>Redução de 70% no tempo</span></div>
+            <div class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400"></i><span>Suporte 24/7</span></div>
+          </div>
+        </div>
+        <!-- Chat demo -->
+        <div class="glass rounded-3xl p-6 md:p-8 shadow-2xl" id="demo">
+          <div class="flex gap-2 mb-4">
+            <span class="w-3 h-3 rounded-full bg-red-500"></span>
+            <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
+            <span class="w-3 h-3 rounded-full bg-green-500"></span>
+          </div>
+          <div class="bg-white rounded-2xl p-5 text-slate-900">
+            <div class="flex gap-2 mb-4 overflow-x-auto">
+              <button data-tab="financeiro" class="px-4 py-2 rounded-full text-sm font-semibold bg-emerald-500 text-white">Financeiro</button>
+              <button data-tab="geral" class="px-4 py-2 rounded-full text-sm font-semibold bg-slate-100">Geral</button>
+              <button data-tab="usuarios" class="px-4 py-2 rounded-full text-sm font-semibold bg-slate-100">Usuários</button>
+              <button data-tab="analytics" class="px-4 py-2 rounded-full text-sm font-semibold bg-slate-100">Analytics</button>
+            </div>
+            <div id="chatbox" class="space-y-3 h-64 overflow-y-auto" aria-live="polite">
+              <div class="flex gap-3 items-start">
+                <div class="shrink-0 rounded-full w-8 h-8 grid place-items-center bg-slate-900 text-white font-bold">C</div>
+                <div class="bg-slate-100 rounded-2xl px-4 py-3 max-w-[80%]">Olá, posso ajudar com faturas, boletos e relatórios</div>
+              </div>
+            </div>
+            <form id="chat-form" class="mt-4 flex gap-2">
+              <input id="msg" class="flex-1 rounded-xl border px-4 py-3" placeholder="Digite sua mensagem..." autocomplete="off" />
+              <button id="send" class="px-4 py-3 rounded-xl bg-slate-900 text-white" type="submit">Enviar</button>
+            </form>
+          </div>
+          <p class="text-sm text-white/70 mt-3">💬 Chat multiassistente personalizável</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social proof -->
+    <section class="border-t border-white/10">
+      <div class="max-w-6xl mx-auto px-4 py-12">
+        <p class="text-white/80 mb-4">Empresas que já transformaram seu atendimento</p>
+        <p class="text-blue-100/90 mb-8">Veja como a CerradoTech está revolucionando a experiência de atendimento</p>
+        <div class="grid md:grid-cols-3 gap-6">
+          <figure class="glass rounded-2xl p-6">
+            <blockquote class="text-white">"Reduzimos o tempo de atendimento em 70% e elevamos a satisfação."</blockquote>
+            <figcaption class="text-sm text-blue-200 mt-4">Ana Silva • Diretora de Atendimento • TechSolutions</figcaption>
+          </figure>
+          <figure class="glass rounded-2xl p-6">
+            <blockquote class="text-white">"Implementamos em 2 dias. A integração com nossas APIs foi simples."</blockquote>
+            <figcaption class="text-sm text-blue-200 mt-4">Carlos Mendes • CTO • StartupBR</figcaption>
+          </figure>
+          <figure class="glass rounded-2xl p-6">
+            <blockquote class="text-white">"Os dashboards em tempo real deram visibilidade total dos processos."</blockquote>
+            <figcaption class="text-sm text-blue-200 mt-4">Mariana Costa • Gerente de Operações • ServicePlus</figcaption>
+          </figure>
+        </div>
+        <div class="mt-8">
+          <a href="#planos" class="btn btn-primary" id="cta-resultados">Quero resultados como estes</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Planos -->
+    <section id="planos" class="border-t border-white/10">
+      <div class="max-w-6xl mx-auto px-4 py-16">
+        <h2 class="text-3xl font-extrabold mb-2">Links Diretos para Contratação</h2>
+        <p class="text-blue-100/90 mb-8">Escolha o plano ideal para seu negócio. Clique e siga para contratação</p>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="plan glass rounded-2xl p-6 flex flex-col">
+            <div class="text-xs uppercase tracking-widest mb-2">POPULAR</div>
+            <h3 class="text-xl font-bold mb-2">Plano Starter</h3>
+            <p class="text-blue-100/90 mb-6">Ideal para começar sua transformação digital</p>
+            <a href="#checkout-starter" class="btn btn-outline mt-auto" id="btn-starter">Contratar Starter</a>
+          </div>
+          <div class="plan glass rounded-2xl p-6 border-emerald-400/50">
+            <div class="text-xs uppercase tracking-widest mb-2">RECOMENDADO</div>
+            <h3 class="text-xl font-bold mb-2">Plano Professional</h3>
+            <p class="text-blue-100/90 mb-6">Para empresas em crescimento que querem escalar com IA</p>
+            <a href="#checkout-professional" class="btn btn-primary" id="btn-professional">Contratar Professional</a>
+          </div>
+          <div class="plan glass rounded-2xl p-6">
+            <div class="text-xs uppercase tracking-widest mb-2">PREMIUM</div>
+            <h3 class="text-xl font-bold mb-2">Plano Enterprise</h3>
+            <p class="text-blue-100/90 mb-6">Solução completa para grandes operações com IA dedicada</p>
+            <a href="#checkout-enterprise" class="btn btn-outline" id="btn-enterprise">Contratar Enterprise</a>
+          </div>
+        </div>
+        <p class="text-blue-100/90 mt-6">Todos os planos incluem suporte técnico e implementação assistida</p>
+      </div>
+    </section>
+
+    <!-- Como funciona -->
+    <section id="como" class="border-t border-white/10">
+      <div class="max-w-6xl mx-auto px-4 py-16">
+        <h2 class="text-3xl font-extrabold mb-8">Como funciona a CerradoTech</h2>
+        <div class="grid md:grid-cols-5 gap-4">
+          <div class="glass rounded-2xl p-5">
+            <div class="text-3xl font-extrabold">01</div>
+            <p class="mt-2 text-blue-100/90">Integre com suas ferramentas. Conecte com WhatsApp, site, CRM e APIs</p>
+          </div>
+          <div class="glass rounded-2xl p-5">
+            <div class="text-3xl font-extrabold">02</div>
+            <p class="mt-2 text-blue-100/90">Configure assistentes. Crie especialistas por função</p>
+          </div>
+          <div class="glass rounded-2xl p-5">
+            <div class="text-3xl font-extrabold">03</div>
+            <p class="mt-2 text-blue-100/90">Treine com seus dados. Respostas alinhadas ao seu contexto</p>
+          </div>
+          <div class="glass rounded-2xl p-5">
+            <div class="text-3xl font-extrabold">04</div>
+            <p class="mt-2 text-blue-100/90">Monitore em tempo real. Métricas e custos em dashboards</p>
+          </div>
+          <div class="glass rounded-2xl p-5">
+            <div class="text-3xl font-extrabold">05</div>
+            <p class="mt-2 text-blue-100/90">Automatize interações. Tarefas com Function Calls</p>
+          </div>
+        </div>
+        <div class="mt-8">
+          <a href="#demo" class="btn btn-primary" id="btn-comecar">Começar Agora</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Casos de uso -->
+    <section id="recursos" class="border-t border-white/10">
+      <div class="max-w-6xl mx-auto px-4 py-16">
+        <h2 class="text-3xl font-extrabold mb-8">Casos de uso reais</h2>
+        <div class="grid md:grid-cols-4 gap-6">
+          <div class="glass rounded-2xl p-5">
+            <h3 class="font-bold text-lg mb-2">Atendimento Automático</h3>
+            <p class="text-blue-100/90">Atendimento no site, WhatsApp ou chat 24/7</p>
+          </div>
+          <div class="glass rounded-2xl p-5">
+            <h3 class="font-bold text-lg mb-2">Suporte Interno</h3>
+            <p class="text-blue-100/90">FAQs para a equipe com acesso rápido a informações</p>
+          </div>
+          <div class="glass rounded-2xl p-5">
+            <h3 class="font-bold text-lg mb-2">Processamento de Mídia</h3>
+            <p class="text-blue-100/90">Extração de conteúdo de vídeos, áudios e documentos</p>
+          </div>
+          <div class="glass rounded-2xl p-5">
+            <h3 class="font-bold text-lg mb-2">Monitoramento de Sistemas</h3>
+            <p class="text-blue-100/90">Monitoramento de APIs e sistemas com alertas</p>
+          </div>
+        </div>
+        <div class="mt-8">
+          <a href="#demo" class="btn btn-outline" id="btn-testar-func">Testar Todas as Funcionalidades</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Por que escolher -->
+    <section class="border-t border-white/10">
+      <div class="max-w-6xl mx-auto px-4 py-16">
+        <h2 class="text-3xl font-extrabold mb-8">Por que escolher a CerradoTech</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="glass rounded-2xl p-6">
+            <h3 class="font-bold text-lg mb-2">Function Calls</h3>
+            <p class="text-blue-100/90">Automatização com integração a APIs e sistemas</p>
+          </div>
+          <div class="glass rounded-2xl p-6">
+            <h3 class="font-bold text-lg mb-2">Extração de Conteúdo</h3>
+            <p class="text-blue-100/90">Vídeos, áudios, textos e URLs</p>
+          </div>
+          <div class="glass rounded-2xl p-6">
+            <h3 class="font-bold text-lg mb-2">Dashboards em Tempo Real</h3>
+            <p class="text-blue-100/90">Métricas, custos e performance</p>
+          </div>
+          <div class="glass rounded-2xl p-6">
+            <h3 class="font-bold text-lg mb-2">Assistentes Especializados</h3>
+            <p class="text-blue-100/90">Múltiplos assistentes por integração</p>
+          </div>
+          <div class="glass rounded-2xl p-6">
+            <h3 class="font-bold text-lg mb-2">Análise de Custos</h3>
+            <p class="text-blue-100/90">Gastos por tokens, chamadas e requisições</p>
+          </div>
+          <div class="glass rounded-2xl p-6">
+            <h3 class="font-bold text-lg mb-2">Integração Universal</h3>
+            <p class="text-blue-100/90">Conexão com qualquer API externa</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recursos completos -->
+    <section class="border-t border-white/10">
+      <div class="max-w-6xl mx-auto px-4 py-16">
+        <h2 class="text-3xl font-extrabold mb-8">Recursos completos para seu negócio</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="glass rounded-2xl p-6">
+            <h3 class="font-bold text-lg mb-2">Cadastro & Edição de Usuários</h3>
+            <p class="text-blue-100/90">Criação, edição e remoção com associação a integrações</p>
+          </div>
+          <div class="glass rounded-2xl p-6">
+            <h3 class="font-bold text-lg mb-2">Gestão de Integrações</h3>
+            <p class="text-blue-100/90">Ativação, inativação e exclusão com controle de acesso</p>
+          </div>
+          <div class="glass rounded-2xl p-6">
+            <h3 class="font-bold text-lg mb-2">Dashboard Analítico</h3>
+            <p class="text-blue-100/90">Mensagens, consumo e custos por integração</p>
+          </div>
+          <div class="glass rounded-2xl p-6">
+            <h3 class="font-bold text-lg mb-2">Chat Multiassistente</h3>
+            <p class="text-blue-100/90">Assistentes por integração com personalização</p>
+          </div>
+          <div class="glass rounded-2xl p-6">
+            <h3 class="font-bold text-lg mb-2">Geração de Links de Chat</h3>
+            <p class="text-blue-100/90">Links de chat exclusivos por integração</p>
+          </div>
+          <div class="glass rounded-2xl p-6">
+            <h3 class="font-bold text-lg mb-2">Gerenciamento Centralizado</h3>
+            <p class="text-blue-100/90">Rotinas de controle em um só lugar</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="border-t border-white/10">
+      <div class="max-w-6xl mx-auto px-4 py-16">
+        <h2 class="text-3xl font-extrabold mb-6">Perguntas Frequentes</h2>
+        <div class="grid md:grid-cols-2 gap-4">
+          <details class="glass rounded-xl p-4">
+            <summary class="font-semibold cursor-pointer">Quais integrações estão ativas</summary>
+            <p class="mt-3 text-blue-100/90">WhatsApp, Web, CRM e APIs próprias conforme configuração</p>
+          </details>
+          <details class="glass rounded-xl p-4">
+            <summary class="font-semibold cursor-pointer">Como funciona o chat multiassistente personalizável</summary>
+            <p class="mt-3 text-blue-100/90">Cada integração pode ter assistentes com regras próprias</p>
+          </details>
+          <details class="glass rounded-xl p-4">
+            <summary class="font-semibold cursor-pointer">É possível testar antes de contratar</summary>
+            <p class="mt-3 text-blue-100/90">Crie um ambiente de teste e avalie o fluxo</p>
+          </details>
+          <details class="glass rounded-xl p-4">
+            <summary class="font-semibold cursor-pointer">Como controlar custos</summary>
+            <p class="mt-3 text-blue-100/90">Relatórios exibem consumo por tokens, chamadas e requisições</p>
+          </details>
+        </div>
+
+        <div class="mt-10 glass rounded-2xl p-6">
+          <div class="grid md:grid-cols-2 gap-6 items-center">
+            <div>
+              <h3 class="text-2xl font-extrabold mb-2">Pronto para otimizar sua gestão</h3>
+              <p class="text-blue-100/90">Conheça como a CerradoTech pode transformar a gestão de usuários, integrações e chats</p>
+              <div class="flex gap-3 mt-4">
+                <a href="#contato" class="btn btn-primary" id="btn-solicitar">Solicitar Demonstração</a>
+                <a href="#recursos" class="btn btn-outline" id="btn-ver-func">Ver Funcionalidades</a>
+              </div>
+              <div class="text-sm text-blue-100/90 mt-4">
+                <span class="tick">Gestão Integrada</span>
+                <span class="tick">Dashboard completo</span>
+                <span class="tick">Suporte dedicado</span>
+              </div>
+            </div>
+            <div class="glass rounded-2xl p-6">
+              <div class="flex gap-3 items-start">
+                <div class="rounded-full w-10 h-10 grid place-items-center bg-emerald-500/20 border border-emerald-500/40">
+                  <i data-lucide="bot" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <div class="font-bold">CerradoTech</div>
+                  <div class="text-blue-100/90">Automatize seu atendimento com IA</div>
+                </div>
+              </div>
+              <div class="mt-4">
+                <a class="btn btn-outline" href="#demo" id="btn-acao">Ação • Começar Agora</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer id="contato" class="border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 py-10 grid md:grid-cols-3 gap-6 items-start">
+      <div>
+        <div class="flex items-center gap-2">
+          <svg width="24" height="24" viewBox="0 0 64 64">
+            <defs>
+              <linearGradient id="ctg2" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#34d399"/>
+                <stop offset="1" stop-color="#16a34a"/>
+              </linearGradient>
+            </defs>
+            <rect width="64" height="64" rx="14" fill="url(#ctg2)"/>
+            <path d="M18 34c0-8 6-14 14-14s14 6 14 14-6 14-14 14" fill="none" stroke="#0b1020" stroke-width="6" stroke-linecap="round"/>
+            <path d="M18 34h14v14" fill="none" stroke="#0b1020" stroke-width="6" stroke-linecap="round"/>
+          </svg>
+          <strong>CerradoTech</strong>
+        </div>
+        <p class="text-blue-100/80 mt-2">Gestão de usuários, integrações, chats e IA</p>
+      </div>
+      <div>
+        <div class="font-bold mb-2">Contato</div>
+        <p class="text-blue-100/80"><a href="mailto:comercial@seniortech.com.br" class="underline">comercial@seniortech.com.br</a></p>
+        <a href="https://app.seudominio.com" target="_blank" rel="noopener" class="inline-block mt-3 btn btn-primary" id="btn-app">Acessar Aplicação</a>
+      </div>
+      <div class="text-blue-100/80">
+        <div>© <span id="year"></span> CerradoTech. Todos os direitos reservados.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ícones
+    lucide.createIcons();
+
+    // tabs do chat
+    const tabs = document.querySelectorAll('[data-tab]');
+    const chat = document.getElementById('chatbox');
+    const form = document.getElementById('chat-form');
+    const msg = document.getElementById('msg');
+
+    const seed = {
+      financeiro: [
+        ["C","Olá, posso ajudar com faturas, boletos e relatórios"],
+        ["you","Quero o boleto de setembro"],
+        ["C","Enviei o PDF do mês solicitado para seu e-mail"]
+      ],
+      geral: [
+        ["C","Posso responder dúvidas gerais e direcionar para o setor correto"]
+      ],
+      usuarios: [
+        ["C","Posso cadastrar usuários e atualizar permissões"]
+      ],
+      analytics: [
+        ["C","Mostro métricas de atendimento e custos em tempo real"]
+      ]
+    };
+
+    function renderThread(key){
+      chat.innerHTML = "";
+      seed[key].forEach(([who,text])=>{
+        if(who==="you"){
+          const el = document.createElement('div');
+          el.className = 'flex gap-3 items-start justify-end';
+          el.innerHTML = '<div class="bg-emerald-100 rounded-2xl px-4 py-3 max-w-[80%]">'+text+'</div>';
+          chat.appendChild(el);
+        } else {
+          const el = document.createElement('div');
+          el.className = 'flex gap-3 items-start';
+          el.innerHTML = '<div class="shrink-0 rounded-full w-8 h-8 grid place-items-center bg-slate-900 text-white font-bold">C</div><div class="bg-slate-100 rounded-2xl px-4 py-3 max-w-[80%]">'+text+'</div>';
+          chat.appendChild(el);
+        }
+      });
+      chat.scrollTop = chat.scrollHeight;
+    }
+
+    tabs.forEach(b=>{
+      b.addEventListener('click',()=>{
+        tabs.forEach(x=>{ x.classList.remove('bg-emerald-500','text-white'); x.classList.add('bg-slate-100'); });
+        b.classList.add('bg-emerald-500','text-white');
+        renderThread(b.dataset.tab);
+      });
+    });
+
+    // envio de mensagem
+    form.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const text = msg.value.trim();
+      if(!text) return;
+      const you = document.createElement('div');
+      you.className = 'flex gap-3 items-start justify-end';
+      you.innerHTML = '<div class="bg-emerald-100 rounded-2xl px-4 py-3 max-w-[80%]">'+text+'</div>';
+      chat.appendChild(you);
+      const bot = document.createElement('div');
+      bot.className = 'flex gap-3 items-start';
+      bot.innerHTML = '<div class="shrink-0 rounded-full w-8 h-8 grid place-items-center bg-slate-900 text-white font-bold">C</div><div class="bg-slate-100 rounded-2xl px-4 py-3 max-w-[80%]">Mensagem recebida</div>';
+      setTimeout(()=> chat.appendChild(bot), 200);
+      msg.value='';
+      chat.scrollTop = chat.scrollHeight;
+    });
+
+    // ano dinâmico
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ancoras de planos simulando checkout
+    function bindSimulatedCheckout(id, name){
+      const el = document.getElementById(id);
+      if(!el) return;
+      el.addEventListener('click', (e)=>{
+        // mantém hash navegável e adiciona alerta amigável
+        setTimeout(()=> alert('Você selecionou: ' + name + '. Configure o link de checkout no atributo href.'), 10);
+      });
+    }
+    bindSimulatedCheckout('btn-starter', 'Plano Starter');
+    bindSimulatedCheckout('btn-professional', 'Plano Professional');
+    bindSimulatedCheckout('btn-enterprise', 'Plano Enterprise');
+
+    // cliques de CTA que rolam para áreas corretas já funcionam via href com hash
+  </script>
+</body>
+</html>
